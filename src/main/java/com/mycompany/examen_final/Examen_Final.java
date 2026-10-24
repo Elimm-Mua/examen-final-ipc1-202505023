@@ -28,9 +28,22 @@ public class Examen_Final {
         p.agregarCancion(c2);
         p.agregarCancion(c3);
 
-        System.out.println("PLAYLIST");
-        System.out.println();
+        System.out.println("LISTA INICIAL");
+        p.mostrarPlaylist();
 
+        System.out.println("SIGUIENTE");
+        p.siguiente();
+
+        System.out.println("SIGUIENTE");
+        p.siguiente();
+
+        System.out.println("ANTERIOR");
+        p.anterior();
+
+        System.out.println("ELIMINAR ACTUAL");
+        p.eliminarActual();
+
+        System.out.println("LISTA FINAL");
         p.mostrarPlaylist();
     }
 }

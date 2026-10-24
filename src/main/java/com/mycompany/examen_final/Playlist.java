@@ -64,4 +64,57 @@ public class Playlist {
     public int getTam() {
         return tam;
     }
+    
+    public void siguiente() {
+
+        if (actual != null && actual.getSig() != null) {
+            actual = actual.getSig();
+            actual.getD().reproducir();
+        }
+    }
+
+    public void anterior() {
+
+        if (actual != null && actual.getAnt() != null) {
+            actual = actual.getAnt();
+            actual.getD().reproducir();
+        }
+    }
+
+    public void eliminarActual() {
+
+        if (actual == null) {
+            return;
+        }
+
+        NodoDoble ant = actual.getAnt();
+        NodoDoble sig = actual.getSig();
+
+        if (ant == null && sig == null) {
+
+            cabeza = null;
+            cola = null;
+            actual = null;
+
+        } else if (ant == null) {
+
+            cabeza = sig;
+            cabeza.setAnt(null);
+            actual = cabeza;
+
+        } else if (sig == null) {
+
+            cola = ant;
+            cola.setSig(null);
+            actual = cola;
+
+        } else {
+
+            ant.setSig(sig);
+            sig.setAnt(ant);
+            actual = sig;
+        }
+
+        tam--;
+    }
 }
