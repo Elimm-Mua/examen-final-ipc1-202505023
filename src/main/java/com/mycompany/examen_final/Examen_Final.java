@@ -22,8 +22,15 @@ public class Examen_Final {
                 "Artista 3"
         );
 
-        c1.reproducir();
-        c2.reproducir();
-        c3.reproducir();
+        Playlist p = new Playlist();
+
+        p.agregarCancion(c1);
+        p.agregarCancion(c2);
+        p.agregarCancion(c3);
+
+        System.out.println("PLAYLIST");
+        System.out.println();
+
+        p.mostrarPlaylist();
     }
 }
